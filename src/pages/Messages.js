@@ -20,7 +20,7 @@ const Messages = () => {
 
   const fetchConversations = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/messages/conversations');
+      const response = await axios.get('https://backend-75tr.onrender.com/api/messages/conversations');
       setConversations(response.data);
       setLoading(false);
     } catch (error) {
@@ -32,7 +32,7 @@ const Messages = () => {
   const fetchMessages = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/messages/project/${selectedConversation.projectId}`
+        `https://backend-75tr.onrender.com/api/messages/project/${selectedConversation.projectId}`
       );
       setMessages(response.data);
     } catch (error) {
@@ -45,7 +45,7 @@ const Messages = () => {
     if (!newMessage.trim()) return;
 
     try {
-      await axios.post('http://localhost:8080/api/messages', {
+      await axios.post('https://backend-75tr.onrender.com/api/messages', {
         projectId: selectedConversation.projectId,
         content: newMessage
       });

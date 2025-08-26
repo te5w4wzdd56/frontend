@@ -23,7 +23,7 @@ const Freelancers = () => {
 
   const fetchFreelancers = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/freelancers');
+      const response = await axios.get('https://backend-75tr.onrender.com/api/freelancers');
       setFreelancers(response.data);
       setLoading(false);
     } catch (error) {

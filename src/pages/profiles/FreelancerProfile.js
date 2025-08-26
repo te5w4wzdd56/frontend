@@ -33,7 +33,7 @@ const FreelancerProfile = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:8080/api/freelancer-profiles/my-profile', {
+      const response = await axios.get('https://backend-75tr.onrender.com/api/freelancer-profiles/my-profile', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setProfile(response.data);
@@ -53,7 +53,7 @@ const FreelancerProfile = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put('http://localhost:8080/api/freelancer-profiles', profile, {
+      await axios.put('https://backend-75tr.onrender.com/api/freelancer-profiles', profile, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setEditing(false);
